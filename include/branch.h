@@ -9,5 +9,6 @@ class Branch
     std::string elfName = "None";
 public:
     Branch(Branch* branch);
+    ~Branch();
 
 };
