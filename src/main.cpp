@@ -28,6 +28,11 @@ int main()
     {
         tree->setAllNameElf();
     }
-    
+
+    std::string name;
+    std::cout<<"Enter name to find Elf:";
+    std::cin>>name;
+    Branch* brenchElf = trees[0]->findElf(name);
+    std::cout<<"Elf "<<name<<" have "<<brenchElf->countNeighbors()<<" neighbors."<<std::endl;
     return 0;
 }
