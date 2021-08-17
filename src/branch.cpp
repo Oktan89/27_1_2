@@ -1,23 +1,39 @@
 #include "branch.h"
+#include <cstdlib>
+#include <iostream>
 
-Branch::Branch(Branch* branch): parent(branch)
+Branch::Branch(Branch* parent): _parent(parent)
 {
-    if(parent == nullptr)
-    {
-        Branch* child;
-        for(int i = 0; i < 5; ++i)
-        {
-            child = new Branch(this);
-            children.push_back(child);
-            child = nullptr;
-        }
-        
-    }
+  
 
+}
+
+Branch* Branch::setChild()
+{
+    Branch* child = new Branch(this);
+    children.push_back(child);
+    return child;
 }
 
 Branch::~Branch()
 {
     for(auto ptr : children)
         delete ptr;
+}
+
+void Branch::setAllNameElf()
+{
+    if(_parent != nullptr)
+    {
+        std::cout<<"Enter elf name: ";
+        std::cin>>elfName;
+    }  
+
+    if(children.empty())
+        return;
+
+    for(auto ch : children)
+    {
+        ch->setAllNameElf();
+    }
 }

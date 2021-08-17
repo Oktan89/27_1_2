@@ -4,11 +4,14 @@
 
 class Branch
 {
-    Branch* parent  = nullptr;
+    Branch* _parent  = nullptr;
     std::vector<Branch*> children;
     std::string elfName = "None";
 public:
-    Branch(Branch* branch);
+    Branch();
+    Branch(Branch* parent);
+    Branch* setChild();
+    void setAllNameElf();
     ~Branch();
 
 };
