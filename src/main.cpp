@@ -7,7 +7,7 @@ int main()
 {
     std::srand(std::time(nullptr));
     std::vector<Branch*> trees;
-    for(int i = 0; i < 1; ++i)
+    for(int i = 0; i < 5; ++i)
     {
         Branch* tree = new Branch(nullptr);
         trees.push_back(tree);
